@@ -44,6 +44,7 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
+        mavenRepo 'http://repo.spring.io/milestone'
     }
 
     dependencies {
@@ -56,12 +57,18 @@ grails.project.dependency.resolution = {
     plugins {
         // plugins for the build system only
         build ":tomcat:7.0.54"
-
+        
         // plugins for the compile step
         compile ":scaffolding:2.1.2"
         compile ':cache:1.1.7'
         compile ":asset-pipeline:1.8.11"
-
+               
+        compile ':spring-security-core:2.0-RC3'
+        compile ":spring-security-ui:1.0-RC2"
+        //compile ':force-ssl:1.0.0'
+        runtime ":database-migration:1.4.0"
+        //compile ":mail:1.0.6"
+        
         // plugins needed at runtime but not for compilation
         runtime ":hibernate4:4.3.5.4" // or ":hibernate:3.6.10.16"
         runtime ":database-migration:1.4.0"

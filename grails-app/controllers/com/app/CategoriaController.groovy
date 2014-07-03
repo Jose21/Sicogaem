@@ -1,11 +1,11 @@
 package com.app
 
-
-
 import static org.springframework.http.HttpStatus.*
+import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
+@Secured(['ROLE_ADMINISTRADOR'])
 class CategoriaController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]

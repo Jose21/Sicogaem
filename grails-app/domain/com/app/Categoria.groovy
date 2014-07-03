@@ -8,4 +8,8 @@ class Categoria implements Serializable{
     static constraints = {
         nombreDeCategoria nullable:true, inList:["Entrada","Salida"]
     }
+    
+    String toString(){
+        "${nombreDeCategoria}"
+    }
 }
