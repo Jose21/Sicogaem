@@ -1,3 +1,6 @@
+
+import org.apache.log4j.DailyRollingFileAppender
+
 // locations to search for config files that get merged into the main config;
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
@@ -99,9 +102,15 @@ environments {
 log4j.main = {
     // Example of changing the log pattern for the default console appender:
     //
-    //appenders {
-    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-    //}
+    appenders {
+        console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
+        appender new DailyRollingFileAppender(
+            name: 'dailyAppender',
+            datePattern : "'.'yyyy-MM-dd",
+            fileName: "/var/uploads/empresa/logs/empresa.log",
+            layout: pattern(conversionPattern:'%d [%t] %-5p %c{2} %x - %m%n')
+        )
+    }
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
@@ -115,3 +124,19 @@ log4j.main = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.app.login.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.app.login.UserRole'
+grails.plugin.springsecurity.authority.className = 'com.app.login.Role'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/':                              ['ROLE_ADMINISTRADOR'],
+	'/index':                         ['permitAll'],
+	'/index.gsp':                     ['permitAll'],
+	'/**/js/**':                      ['permitAll'],
+	'/**/css/**':                     ['permitAll'],
+	'/**/images/**':                  ['permitAll'],
+	'/**/favicon.ico':                ['permitAll'],
+	
+]
+
