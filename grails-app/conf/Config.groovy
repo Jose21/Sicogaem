@@ -130,13 +130,29 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.app.login.Use
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.app.login.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.app.login.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	'/':                              ['ROLE_ADMINISTRADOR'],
+	'/':                              ['permitAll'],
 	'/index':                         ['permitAll'],
 	'/index.gsp':                     ['permitAll'],
 	'/**/js/**':                      ['permitAll'],
 	'/**/css/**':                     ['permitAll'],
 	'/**/images/**':                  ['permitAll'],
-	'/**/favicon.ico':                ['permitAll'],
+	'/**/favicon.ico':                ['permitAll']
 	
+]
+
+
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.app.login.Usuario'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.app.login.UsuarioRol'
+grails.plugin.springsecurity.authority.className = 'com.app.login.Rol'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/':                              ['permitAll'],
+	'/index':                         ['permitAll'],
+	'/index.gsp':                     ['permitAll'],
+	'/**/js/**':                      ['permitAll'],
+	'/**/css/**':                     ['permitAll'],
+	'/**/images/**':                  ['permitAll'],
+	'/**/favicon.ico':                ['permitAll']
 ]
 

@@ -1,8 +1,8 @@
 
 import com.app.catalogos.*
-import com.app.login.Role
-import com.app.login.User
-import com.app.login.UserRole
+import com.app.login.Rol
+import com.app.login.Usuario
+import com.app.login.UsuarioRol
 //import grails.util.Environment 
 
 class BootStrap {
@@ -11,7 +11,7 @@ class BootStrap {
         /**switch(Environment.current){
             case Environment.DEVELOPMENT:**/
                 
-                new User (
+                new Usuario (
                     firstName : "Administrador",
                     lastName : "Del Sistema",
                     email : "admin@empresa.com",
@@ -23,7 +23,7 @@ class BootStrap {
                     passwordExpired : false
                 ).save()
 
-                new User (
+                new Usuario (
                     firstName : "Diana",
                     lastName : "Villa",
                     email : "diana@empresa.com",
@@ -35,12 +35,12 @@ class BootStrap {
                     passwordExpired : false
                 ).save()
 
-                new Role (authority : "ROLE_ADMINISTRADOR").save()
-                new Role (authority : "ROLE_CONTADOR").save()
+                new Rol (authority : "ROLE_ADMINISTRADOR").save()
+                new Rol (authority : "ROLE_CONTADOR").save()
 
 
-                new UserRole (user : User.findByUsername("admin"), role : Role.findByAuthority("ROLE_ADMINISTRADOR")).save(failOnError: true)
-                new UserRole (user : User.findByUsername("contador"), role : Role.findByAuthority("ROLE_CONTADOR")).save(failOnError: true)
+                new UsuarioRol (usuario : Usuario.findByUsername("admin"), rol : Rol.findByAuthority("ROLE_ADMINISTRADOR")).save(failOnError: true)
+                new UsuarioRol (usuario : Usuario.findByUsername("contador"), rol : Rol.findByAuthority("ROLE_CONTADOR")).save(failOnError: true)
                 
                 
                 new Estado (nombre:"Estado de México").save()
