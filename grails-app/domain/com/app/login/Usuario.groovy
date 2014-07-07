@@ -3,6 +3,7 @@ package com.app.login
 class Usuario {
 
 	transient springSecurityService
+	//transient passwordEncoder
 
 	String username
 	String password
@@ -29,7 +30,7 @@ class Usuario {
 	}
 
 	Set<Rol> getAuthorities() {
-		UsuarioRol.findAllByUsuario(this).collect { it.rol }
+		UsuarioRol.findAllByUsuario(this).collect { it.rol } as Set
 	}
 
 	def beforeInsert() {
@@ -44,5 +45,7 @@ class Usuario {
 
 	protected void encodePassword() {
 		password = springSecurityService?.passwordEncoder ? springSecurityService.encodePassword(password) : password
+                //password = springSecurityService.encodePassword(password)
+                //password = passwordEncoder.encodePassword(password, username)
 	}
 }

@@ -39,14 +39,16 @@ class BootStrap {
                 new Rol (authority : "ROLE_CONTADOR").save()
 
 
-                new UsuarioRol (usuario : Usuario.findByUsername("admin"), rol : Rol.findByAuthority("ROLE_ADMINISTRADOR")).save(failOnError: true)
-                new UsuarioRol (usuario : Usuario.findByUsername("contador"), rol : Rol.findByAuthority("ROLE_CONTADOR")).save(failOnError: true)
+                new UsuarioRol (usuario : Usuario.findByUsername("admin"), rol : Rol.findByAuthority("ROLE_ADMINISTRADOR")).save()
+                new UsuarioRol (usuario : Usuario.findByUsername("contador"), rol : Rol.findByAuthority("ROLE_CONTADOR")).save()
                 
                 
                 new Estado (nombre:"Estado de México").save()
                 new Pais (nombre:"México").save()
                 
                 new ConfiguracionEmpresa(nombreDeEmpresa:"NUUPTECH S.A. de C.V.",domicilio:"Calle Los Cerezos 943",email:"nuuptech1@gmail.com").save()
+                
+                println("we made it! ")
                 /**break
         }**/
     }

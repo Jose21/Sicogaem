@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title><g:layoutTitle default="Grails"/></title>
+        <title>Log In</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Headings -->
@@ -54,7 +54,6 @@
 
     <asset:stylesheet src="application.css"/>
     <asset:javascript src="application.js"/>
-    <g:layoutHead/>
 </head>
     <body>
     <sec:ifNotLoggedIn>    
@@ -69,24 +68,31 @@
                     <div class="page-header">
                         <h3 class="center">Please login</h3>
                     </div>
-                    <form role="form" id="login-form" class="form-horizontal" action="${postUrl}" method="POST" autocomplete="false">
+                    <form id="login-form" class="form-horizontal" action="${postUrl}" method="POST" autocomplete="false">
                         <div class="row">
                             <div class="form-group relative">
                                 <div class="icon"><i class="icon20 i-user"></i></div>
-                                <input class="form-control" type="text" name="user" id="user" placeholder="Username" value="">
+                                <input class="form-control" type="text" name="j_username" id="username" placeholder="Nombre de usuario" value="">
                                 
                             </div><!-- End .control-group  -->
                             <div class="form-group relative">
                                 <div class="icon"><i class="icon20 i-key"></i></div>
-                                <input class="form-control" type="password" name="password" id="password" placeholder="Password" value="">
+                                <input class="form-control" type="password" name="j_password" id="password" placeholder="Contraseña" value="">
                                 
                             </div><!-- End .control-group  -->
                             <div class="form-group relative">
                                 <label class="control-label" class="checkbox pull-left">
-                                    <input type="checkbox" value="1" name="remember">
+                                    <input type="checkbox" value="1" name="remember" <g:if test='${hasCookie}'>checked='checked'</g:if>/>
                                     Remember me ?
                                 </label>
-                                <button id="loginBtn" type="submit" class="btn btn-primary pull-right col-lg-5">Login</button>
+                                <button id="loginBtn" type="submit" class="btn btn-primary pull-right col-lg-5">Ingresar</button>
+                            </div>
+                            <div class="form-group relative">
+                            <g:if test='${flash.message}'>
+                                    <div class="alert alert-error alert-block">
+                                      <h4 class="alert-heading center">¡Alerta!</h4> ${flash.message}
+                                    </div>
+                                </g:if>
                             </div>
                         </div><!-- End .row-fluid  -->
                     </form>
