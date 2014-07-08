@@ -49,7 +49,7 @@
         <script src="${resource(dir:'assets/js/pages',file:'domready.js')}"></script><!-- Init plugins only for page -->
 
         <!-- UI plugins -->
-        <script src="${resource(dir:'assets/js/plugins/ui/jgrowl',fle:'jquery.jgrowl.js')}"></script>
+        <script src="${resource(dir:'assets/js/plugins/ui/jgrowl',file:'jquery.jgrowl.js')}"></script>
 
 
     <asset:stylesheet src="application.css"/>
