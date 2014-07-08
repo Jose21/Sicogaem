@@ -16,6 +16,7 @@ class ConfiguracionEmpresaController {
     }
 
     def show(ConfiguracionEmpresa configuracionEmpresaInstance) {
+        println "mensaje:"+ params
         respond configuracionEmpresaInstance
     }
 
@@ -39,7 +40,7 @@ class ConfiguracionEmpresaController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'configuracionEmpresa.label', default: 'ConfiguracionEmpresa'), configuracionEmpresaInstance.id])
+                flash.message = "mensaje"
                 redirect configuracionEmpresaInstance
             }
             '*' { respond configuracionEmpresaInstance, [status: CREATED] }

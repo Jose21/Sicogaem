@@ -12,25 +12,21 @@
         <title><g:layoutTitle default="Grails"/></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Headings -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
-        <!-- Text -->
-        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' />
-
-
         <!-- Core stylesheets do not remove -->
         <link href="${resource(dir:'assets/css/bootstrap',file:'bootstrap.css')}" rel="stylesheet" />
         <link href="${resource(dir:'assets/css/bootstrap',file:'bootstrap-theme.css')}" rel="stylesheet" />
         <link href="${resource(dir:'assets/css',file:'icons.css')}" rel="stylesheet" />
 
         <!-- Plugins stylesheets -->
-        <link href="${resource(dir:'assets/js/plugins/forms/uniform',file:'uniform.default.css')}" rel="stylesheet" /> 
+        <link href="${resource(dir:'assets/js/plugins/forms/uniform',file:'uniform.default.css')}" rel="stylesheet" />
+        <link href="${resource(dir:'assets/js/plugins/ui/jgrowl',file:'jquery.jgrowl.css')}" rel="stylesheet" /> 
 
         <!-- app stylesheets -->
         <link href="${resource(dir:'assets/css',file:'app.css')}" rel="stylesheet" /> 
 
         <!-- Custom stylesheets ( Put your own changes here ) -->
         <link href="${resource(dir:'assets/css',file:'custom.css')}" rel="stylesheet" /> 
+        <link href="${resource(dir:'assets/css/js/plugins/forms/switch',file:'bootstrapSwitch.css')}" rel="stylesheet" />  
 
         <!-- Force IE9 to render in normal mode -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -46,10 +42,15 @@
 
         <!-- Form plugins -->
         <script src="${resource(dir:'assets/js/plugins/forms/uniform',file:'jquery.uniform.min.js')}"></script>
+        <script src="${resource(dir:'assets/js/plugins/forms/switch',file:'bootstrapSwitch.js"')}"></script>
 
         <!-- Init plugins -->
         <script src="${resource(dir:'assets/js',file:'app.js')}"></script><!-- Core js functions -->
         <script src="${resource(dir:'assets/js/pages',file:'domready.js')}"></script><!-- Init plugins only for page -->
+
+        <!-- UI plugins -->
+        <script src="${resource(dir:'assets/js/plugins/ui/jgrowl',fle:'jquery.jgrowl.js')}"></script>
+
 
     <asset:stylesheet src="application.css"/>
     <asset:javascript src="application.js"/>
@@ -97,18 +98,12 @@
                     </ul>
                 </div>
 
-                <div class="container-fluid">
-                    <div id="heading" class="page-header">
-                        <h1><i class="icon20 i-file-7"></i> Blank Page</h1>
-                    </div>
-
+                <div class="container-fluid">                    
                     <div class="row">
-                    <!-- Start page from here  -->
-
-
-
+                    <!-- Start page from here  -->                       
+                        <g:layoutBody/>
+                    <!--PAGE CONTENT ENDS-->
                     </div><!-- End .row-fluid  -->
-
                 </div> <!-- End .container-fluid  -->
             </div> <!-- End .wrapper  -->
         </section>
