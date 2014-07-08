@@ -97,7 +97,7 @@
                         </div><!-- End .row-fluid  -->
                     </form>
                     <p class="center">Don`t have an account? <a href="#" id="register"><strong>Create one now</strong></a></p>
-                    <div class="or center"><strong>or</strong></div>
+                    <div class="center"><strong>or</strong></div>
                     <hr class="seperator">
                     <a href="#" class="btn btn-primary pull-left"><i class="icon16 i-facebook gap-left0"></i> Connect</a>
                     <a href="#" class="btn btn-info pull-right"><i class="icon16 i-twitter gap-left0"></i> Connect</a>
