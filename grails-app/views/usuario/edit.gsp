@@ -49,13 +49,16 @@ if (isOpenId) {
                            labelCodeDefault='Email' value="${user?.email}"/>
         
         <g:if test="${user.cedulaImagen}">
-            <g:link controller="user" action="muestraImagen " id="${user.id}">${fieldValue(bean: userInstance, field: "id")}
-                                                        <img width="30%" height="60%" src="http://localhost:8080/Sicogaem/user/muestraCedulaProfesional/${user.id}">
+            <g:link controller="usuario" action="muestraFoto" id="${user.id}">${fieldValue(bean: userInstance, field: "id")}
+                                                        <img width="30%" height="60%" src="http://localhost:8080/Sicogaem/usuario/muestraFoto/${user.id}">
             </g:link>
             
         </g:if>
 
         <input type="file" name="cedulaImagen"/>
+
+        <s2ui:textFieldRow name='numeroDeCedula' labelCode='user.numeroDeCedula.label' bean="${user}"
+        labelCodeDefault='Número de Cédula' value="${user?.numeroDeCedula}"/>
 
         <s2ui:textFieldRow name='username' labelCode='user.username.label' bean="${user}"
                            labelCodeDefault='Nombre de Usuario' value="${user?.username}"/>

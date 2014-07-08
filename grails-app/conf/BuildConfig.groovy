@@ -66,7 +66,7 @@ grails.project.dependency.resolution = {
         compile ':spring-security-core:2.0-RC3'
         compile ":spring-security-ui:1.0-RC2"
         //compile ':force-ssl:1.0.0'
-        runtime ":database-migration:1.4.0"
+        //runtime ":database-migration:1.4.0"
         //compile ":mail:1.0.6"
         
         // plugins needed at runtime but not for compilation

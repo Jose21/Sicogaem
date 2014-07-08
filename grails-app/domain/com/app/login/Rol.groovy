@@ -1,6 +1,6 @@
 package com.app.login
 
-class Role {
+class Rol {
 
 	String authority
 

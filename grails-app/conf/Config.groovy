@@ -1,4 +1,4 @@
-
+import org.apache.log4j.*
 import org.apache.log4j.DailyRollingFileAppender
 
 // locations to search for config files that get merged into the main config;
@@ -102,16 +102,7 @@ environments {
 log4j.main = {
     // Example of changing the log pattern for the default console appender:
     //
-    appenders {
-        console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-        appender new DailyRollingFileAppender(
-            name: 'dailyAppender',
-            datePattern : "'.'yyyy-MM-dd",
-            fileName: "/var/uploads/empresa/logs/empresa.log",
-            layout: pattern(conversionPattern:'%d [%t] %-5p %c{2} %x - %m%n')
-        )
-    }
-
+    
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
            'org.codehaus.groovy.grails.web.sitemesh',       // layouts
@@ -126,18 +117,21 @@ log4j.main = {
 }
 
 // Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.app.login.User'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.app.login.UserRole'
-grails.plugin.springsecurity.authority.className = 'com.app.login.Role'
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.app.login.Usuario'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.app.login.UsuarioRol'
+grails.plugin.springsecurity.authority.className = 'com.app.login.Rol'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	'/':                              ['permitAll'],
-	'/index':                         ['permitAll'],
-	'/index.gsp':                     ['permitAll'],
+
+	'/':                              ['ROLE_ADMINISTRADOR','ROLE_CONTADOR'],
+	'/index':                         ['ROLE_ADMINISTRADOR','ROLE_CONTADOR'],
+	'/index.gsp':                     ['ROLE_ADMINISTRADOR','ROLE_CONTADOR'],
+	'/main.gsp':                      ['ROLE_ADMINISTRADOR','ROLE_CONTADOR'],
 	'/**/js/**':                      ['permitAll'],
 	'/**/css/**':                     ['permitAll'],
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll'],
-        '/configuracionEmpresa/**':       ['permitAll']
+        '/configuracionEmpresa/**':       ['permitAll'],
+        '/dbconsole/**':                  ['permitAll'],
+        '/usuario/**':                    ['permitAll']
 	
 ]
-

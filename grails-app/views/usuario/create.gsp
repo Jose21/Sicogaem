@@ -30,7 +30,7 @@ tabData << [name: 'roles',    icon: 'icon_role', messageCode: 'spring.security.u
         <s2ui:textFieldRow name='lastName' labelCode='user.lastName.label' bean="${user}"
                            labelCodeDefault='Apellidos' value="${user?.lastName}"/>
         
-        <input type="file" name="imagen"/>
+        <input type="file" name="foto"/>
 
         <s2ui:textFieldRow name='email' labelCode='user.email.label' bean="${user}"
                            labelCodeDefault='Email' value="${user?.email}"/>
