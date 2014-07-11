@@ -83,7 +83,7 @@
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <li role="presentation"><g:link controller="user"><i class="icon16 i-cogs"></i> Configuraciones</g:link></li>
-                            <li role="presentation"><a href="profile.html" class=""><i class="icon16 i-user"></i> Profile</a></li>
+                            <li role="presentation"><g:link controller="user" action="verUsuario" id="${sec.loggedInUserInfo(field:"id")}"><i class="icon16 i-user"></i> Perfil</g:link></li>
                             <li role="presentation"><g:link controller="logout" action="index"><i class="icon16 i-exit"></i> Salir</g:link></li>
                         </ul>
                     </li>

@@ -10,19 +10,19 @@
 
 <title><g:layoutTitle default='Security Management Console'/></title>
 
-<link rel="shortcut icon" href="${resource(dir:'web.app/images',file:'favicon.ico')}" type="image/x-icon"/>
+<link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon"/>
 
    <link rel="stylesheet" media="screen" href="${resource(dir:'web-app/css',file:'reset.css',plugin:'spring-security-ui')}"/>
    <g:javascript library='jquery' plugin='jquery' />
    <jqui:resources />
-   <link rel="stylesheet" media="screen" href="${resource(dir:'web-app/css/smoothness',file:'jquery-ui-1.10.3.custom.css',plugin:'spring-security-ui')}"/>
-   <link rel="stylesheet" media="screen" href="${resource(dir:'web-app/css',file:'jquery.jgrowl.css',plugin:'spring-security-ui')}"/>
-   <link rel="stylesheet" media="screen" href="${resource(dir:'web-app/css',file:'jquery.safari-checkbox.css',plugin:'spring-security-ui')}"/>
-   <link rel="stylesheet" media="screen" href="${resource(dir:'web-app/css',file:'date_input.css',plugin:'spring-security-ui')}"/>
-   <link rel="stylesheet" media="screen" href="${resource(dir:'web-app/css',file:'jquery.jdMenu.css',plugin:'spring-security-ui')}"/>
-   <link rel="stylesheet" media="screen" href="${resource(dir:'web-app/css',file:'jquery.jdMenu.slate.css',plugin:'spring-security-ui')}"/>
-   <link rel="stylesheet" media="screen" href="${resource(dir:'web-app/css',file:'table.css',plugin:'spring-security-ui')}"/>
-   <link rel="stylesheet" media="screen" href="${resource(dir:'web-app/css',file:'spring-security-ui.css',plugin:'spring-security-ui')}"/>
+   <link rel="stylesheet" media="screen" href="${resource(dir:'/css/smoothness',file:'jquery-ui-1.10.3.custom.css',plugin:'spring-security-ui')}"/>
+   <link rel="stylesheet" media="screen" href="${resource(dir:'/css',file:'jquery.jgrowl.css',plugin:'spring-security-ui')}"/>
+   <link rel="stylesheet" media="screen" href="${resource(dir:'/css',file:'jquery.safari-checkbox.css',plugin:'spring-security-ui')}"/>
+   <link rel="stylesheet" media="screen" href="${resource(dir:'/css',file:'date_input.css',plugin:'spring-security-ui')}"/>
+   <link rel="stylesheet" media="screen" href="${resource(dir:'/css',file:'jquery.jdMenu.css',plugin:'spring-security-ui')}"/>
+   <link rel="stylesheet" media="screen" href="${resource(dir:'/css',file:'jquery.jdMenu.slate.css',plugin:'spring-security-ui')}"/>
+   <link rel="stylesheet" media="screen" href="${resource(dir:'/css',file:'table.css',plugin:'spring-security-ui')}"/>
+   <link rel="stylesheet" media="screen" href="${resource(dir:'/css',file:'spring-security-ui.css',plugin:'spring-security-ui')}"/>
 
 <%--<s2ui:resources module='spring-security-ui' />--%>
 <%--
@@ -196,14 +196,14 @@ the explicit tags above and edit those, not the taglib code.
 				<%--<s2ui:layoutResources module='spring-security-ui' />--%>
 				<g:layoutBody/>
 
-<g:javascript src='web-app/jquery/jquery.jgrowl.js' plugin='spring-security-ui'/>
-<g:javascript src='web-app/jquery/jquery.checkbox.js' plugin='spring-security-ui'/>
-<g:javascript src='web-app/jquery/jquery.date_input.js' plugin='spring-security-ui'/>
-<g:javascript src='web-app/jquery/jquery.positionBy.js' plugin='spring-security-ui'/>
-<g:javascript src='web-app/jquery/jquery.bgiframe.js' plugin='spring-security-ui'/>
-<g:javascript src='web-app/jquery/jquery.jdMenu.js' plugin='spring-security-ui'/>
-<g:javascript src='web-app/jquery/jquery.dataTables.min.js' plugin='spring-security-ui'/>
-<g:javascript src='web-app/css/spring-security-ui.js' plugin='spring-security-ui'/>
+<g:javascript src='/jquery/jquery.jgrowl.js' plugin='spring-security-ui'/>
+<g:javascript src='/jquery/jquery.checkbox.js' plugin='spring-security-ui'/>
+<g:javascript src='/jquery/jquery.date_input.js' plugin='spring-security-ui'/>
+<g:javascript src='/jquery/jquery.positionBy.js' plugin='spring-security-ui'/>
+<g:javascript src='/jquery/jquery.bgiframe.js' plugin='spring-security-ui'/>
+<g:javascript src='/jquery/jquery.jdMenu.js' plugin='spring-security-ui'/>
+<g:javascript src='/jquery/jquery.dataTables.min.js' plugin='spring-security-ui'/>
+<g:javascript src='/spring-security-ui.js' plugin='spring-security-ui'/>
 
 			</div>
 		</div>
