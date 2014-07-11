@@ -1,13 +1,14 @@
 package com.app
 
+import com.app.login.Usuario
+
 class ImagenController {
 
     def index() { }
     
-    def muestraImagen = 
-    {
-        def foto = Usuario.get( params.id as long)
+    def mostrar = {        
+        def foto = Usuario.get( params.id as long)        
         response.outputStream << foto?.foto
-        response.outputStream.flush()
-    }
+        response.outputStream.flush()        
+    }  
 }

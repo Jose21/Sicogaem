@@ -69,7 +69,16 @@
                     <li class="divider-vertical"></li>
                     <li class="dropdown user">
                         <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
-                            <img src="assets/images/avatars/sugge.jpg" alt="sugge">
+                            
+                            <sec:ifLoggedIn>
+				<img width="10%" height="10%" src="http://localhost:8080/Sicogaem/imagen/mostrar/${sec.loggedInUserInfo(field:"id")}">
+                                <%--<sec:loggedInUserInfo field="foto" />--%>
+		            </sec:ifLoggedIn>                            
+                            
+                            <sec:ifLoggedIn>
+                                <sec:username/>
+		            </sec:ifLoggedIn>
+                            
                             <span class="more"><i class="icon16 i-arrow-down-2"></i></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">

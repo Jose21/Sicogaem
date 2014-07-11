@@ -10,7 +10,7 @@
 
 <h3><g:message code="default.create.label" args="[entityName]"/></h3>
 
-<g:form action="save" name='userCreateForm'>
+<g:form action="save" name='userCreateForm' enctype='multipart/form-data'>
 
 <%
 def tabData = []
@@ -23,7 +23,17 @@ tabData << [name: 'roles',    icon: 'icon_role', messageCode: 'spring.security.u
 	<s2ui:tab name='userinfo' height='280'>
 		<table>
 		<tbody>
+                        <s2ui:textFieldRow name='firstName' labelCode='user.firstName.label' bean="${user}"
+                                           labelCodeDefault='Nombre' value="${user?.firstName}"/>
 
+                        <s2ui:textFieldRow name='lastName' labelCode='user.lastName.label' bean="${user}"
+                                           labelCodeDefault='Apellidos' value="${user?.lastName}"/>
+
+                        <input type="file" name="foto"/>
+                        
+                        <s2ui:textFieldRow name='email' labelCode='user.email.label' bean="${user}"
+                                            labelCodeDefault='email' value="${user?.email}"/>
+                        
 			<s2ui:textFieldRow name='username' labelCode='user.username.label' bean="${user}"
                             labelCodeDefault='Username' value="${user?.username}"/>
 

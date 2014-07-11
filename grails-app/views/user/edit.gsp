@@ -19,7 +19,7 @@
 
 <h3><g:message code="default.edit.label" args="[entityName]"/></h3>
 
-<g:form action="update" name='userEditForm' class="button-style">
+<g:form action="update" name='userEditForm' class="button-style" enctype ='multipart/form-data'>
 <g:hiddenField name="id" value="${user?.id}"/>
 <g:hiddenField name="version" value="${user?.version}"/>
 
@@ -39,6 +39,24 @@ if (isOpenId) {
 		<table>
 		<tbody>
 
+                        <s2ui:textFieldRow name='firstName' labelCode='user.firstName.label' bean="${user}"
+                           labelCodeDefault='Nombre' value="${user?.firstName}"/>
+
+                        <s2ui:textFieldRow name='lastName' labelCode='user.lastName.label' bean="${user}"
+                                           labelCodeDefault='Apellidos' value="${user?.lastName}"/>
+
+                        <s2ui:textFieldRow name='email' labelCode='user.email.label' bean="${user}"
+                                           labelCodeDefault='Email' value="${user?.email}"/>
+
+                        <g:if test="${user.foto}">
+                            <g:link controller="imagen" action="mostrar" id="${user.id}">${fieldValue(bean: userInstance, field: "id")}
+                               <img width="30%" height="60%" src="http://localhost:8080/Sicogaem/imagen/mostrar/${user.id}">
+                            </g:link>
+
+                        </g:if>
+
+                        <input type="file" name="foto"/>
+                    
 			<s2ui:textFieldRow name='username' labelCode='user.username.label' bean="${user}"
                             labelCodeDefault='Username' value="${user?.username}"/>
 
