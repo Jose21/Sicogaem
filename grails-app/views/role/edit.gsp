@@ -26,7 +26,7 @@ tabData << [name: 'users',    icon: 'icon_users', messageCode: 'spring.security.
 		<table>
 		<tbody>
 			<s2ui:textFieldRow name='authority' labelCode='role.authority.label' bean="${role}"
-                            labelCodeDefault='Rol' value="${role?.authority}"/>
+                            labelCodeDefault='Authority' value="${role?.authority}"/>
 		</tbody>
 		</table>
 	</s2ui:tab>

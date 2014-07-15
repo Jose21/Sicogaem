@@ -19,7 +19,7 @@
 		<table>
 			<tbody>
 			<tr>
-				<td><g:message code='role.authority.label' default='Rol'/>:</td>
+				<td><g:message code='role.authority.label' default='Authority'/>:</td>
 				<td><g:textField name='authority' class='textField' size='50' maxlength='255' autocomplete='off' value='${authority}'/></td>
 			</tr>
 			<tr><td colspan='2'>&nbsp;</td></tr>

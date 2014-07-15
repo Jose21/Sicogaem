@@ -69,13 +69,22 @@
                     <li class="divider-vertical"></li>
                     <li class="dropdown user">
                         <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
-                            <img src="assets/images/avatars/sugge.jpg" alt="sugge">
+                            
+                            <sec:ifLoggedIn>
+				<img width="10%" height="10%" src="http://localhost:8080/Sicogaem/imagen/mostrar/${sec.loggedInUserInfo(field:"id")}">
+                                <%--<sec:loggedInUserInfo field="foto" />--%>
+		            </sec:ifLoggedIn>                            
+                            
+                            <sec:ifLoggedIn>
+                                <sec:username/>
+		            </sec:ifLoggedIn>
+                            
                             <span class="more"><i class="icon16 i-arrow-down-2"></i></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li role="presentation"><a href="#" class=""><i class="icon16 i-cogs"></i> Settings</a></li>
-                            <li role="presentation"><a href="profile.html" class=""><i class="icon16 i-user"></i> Profile</a></li>
-                            <li role="presentation"><a href="index.html" class=""><i class="icon16 i-exit"></i> Logout</a></li>
+                            <li role="presentation"><g:link controller="user"><i class="icon16 i-cogs"></i> Configuraciones</g:link></li>
+                            <li role="presentation"><g:link controller="user" action="verUsuario" id="${sec.loggedInUserInfo(field:"id")}"><i class="icon16 i-user"></i> Perfil</g:link></li>
+                            <li role="presentation"><g:link controller="logout" action="index"><i class="icon16 i-exit"></i> Salir</g:link></li>
                         </ul>
                     </li>
                     <li class="divider-vertical"></li>
