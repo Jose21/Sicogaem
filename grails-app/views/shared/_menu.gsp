@@ -9,10 +9,10 @@
     <nav id="mainnav">
         <ul class="nav nav-list">
             <li>
-                <a href="dashboard.html">
+                <g:link controller="dashboard" action="index">
                     <span class="icon"><i class="icon20 i-home-10"></i></span>
                     <span class="txt">Inicio</span>
-                </a>
+                </g:link>
             </li>
         </ul>
         <ul class="nav nav-list">
