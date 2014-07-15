@@ -20,7 +20,6 @@
         <g:textField name="domicilio" required="" value="${configuracionEmpresaInstance?.domicilio}"/>
     </div>
 </div>
-
 <div class="form-group fieldcontain ${hasErrors(bean: configuracionEmpresaInstance, field: 'email', 'error')} required">
     <label class="col-lg-2 control-label" for="email">
         <g:message code="configuracionEmpresa.email.label" default="Email" />

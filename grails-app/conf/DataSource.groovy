@@ -18,7 +18,7 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "update"            
+            dbCreate = "create"            
         }
     }
     production {
