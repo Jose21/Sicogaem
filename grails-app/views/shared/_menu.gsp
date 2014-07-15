@@ -33,7 +33,7 @@
         </ul>
         <ul class="nav nav-list">
             <li>               
-                <g:link controller="configuracionEmpresa" action="create">
+                <g:link controller="configuracionEmpresa" action="show" id="1">
                     <span class="icon"><i class="icon20 i-office"></i></span>
                     <span class="txt">Datos de la Empresa</span>
                 </g:link> 
