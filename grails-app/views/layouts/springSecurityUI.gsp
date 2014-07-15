@@ -12,7 +12,6 @@
 <title><g:layoutTitle default='Consola de Administración de Seguridad'/></title>
 
 <link rel="shortcut icon" href="${resource(dir:'assets/images',file:'favicon.ico')}" type="image/x-icon"/>
-<%--<link rel="stylesheet" href="${resource(dir:'assets/css',file:'menu.css')}" type="text/css"/>--%>
 
 <s2ui:resources module='spring-security-ui' />
 <%--
