@@ -152,7 +152,7 @@ the explicit tags above and edit those, not the taglib code.
 			<div id='s2ui_header_body'>
 
 				<div id='s2ui_header_title'>
-					Spring Security Management Console
+					Consola Spring para la Administración de la Seguridad
 				</div>
 
 				<span id='s2ui_login_link_container'>
