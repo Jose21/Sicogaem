@@ -75,6 +75,8 @@ class ConfiguracionEmpresaController {
 
     @Transactional
     def delete(ConfiguracionEmpresa configuracionEmpresaInstance) {
+        
+        println "params para delete:"+ params
 
         if (configuracionEmpresaInstance == null) {
             notFound()

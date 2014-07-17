@@ -9,10 +9,10 @@
     <nav id="mainnav">
         <ul class="nav nav-list">
             <li>
-                <a href="dashboard.html">
+                <g:link controller="configuracionEmpresa" action="show" id="1">
                     <span class="icon"><i class="icon20 i-home-10"></i></span>
                     <span class="txt">Inicio</span>
-                </a>
+                </g:link> 
             </li>
         </ul>
         <ul class="nav nav-list">
@@ -31,13 +31,13 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav nav-list">
+        <!--ul class="nav nav-list">
             <li>               
                 <g:link controller="configuracionEmpresa" action="show" id="1">
                     <span class="icon"><i class="icon20 i-office"></i></span>
                     <span class="txt">Datos de la Empresa</span>
                 </g:link> 
             </li>
-        </ul>
+        </ul-->
     </nav> <!-- End #mainnav -->
 </div> <!-- End .sidebar-wrapper  -->

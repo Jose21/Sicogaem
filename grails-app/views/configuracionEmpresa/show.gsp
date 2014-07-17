@@ -65,12 +65,13 @@
                                         </div>
                                     </div>
                                     <div class="panel-heading">
-                                        <g:link class="btn btn-warning" action="edit" resource="${configuracionEmpresaInstance}">
-                                            <i class="icon16 i-pencil-5"></i> Editar
-                                        </g:link>
-                                        <g:link class="btn btn-danger" action="delete" resource="${configuracionEmpresaInstance}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');">
-                                            <i class="icon16 i-remove-7"></i> Eliminar
-                                        </g:link>                                  
+
+                                        <g:form url="[resource:estadoInstance, action:'delete']" method="DELETE">
+                                            <g:link class="btn btn-warning" action="edit" resource="${configuracionEmpresaInstance}">
+                                                <i class="icon16 i-pencil-5"></i> Editar
+                                            </g:link>                                            
+                                            <!--g:actionSubmit class="delete" action="delete" id="${configuracionEmpresaInstance.id}" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /-->
+                                        </g:form>
                                     </div>
                                 </div>
                             </div><!-- End .panel-body -->
