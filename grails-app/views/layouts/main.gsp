@@ -52,8 +52,8 @@
         <script src="${resource(dir:'assets/js/plugins/ui/jgrowl',file:'jquery.jgrowl.js')}"></script>
 
 
-    <%--<asset:stylesheet src="application.css"/>
-    <asset:javascript src="application.js"/>--%>
+    <asset:stylesheet src="application.css"/>
+    <asset:javascript src="application.js"/>
     <g:layoutHead/>
 </head>
 <body>    
