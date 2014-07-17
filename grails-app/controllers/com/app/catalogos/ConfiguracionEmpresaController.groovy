@@ -15,7 +15,8 @@ class ConfiguracionEmpresaController {
         respond ConfiguracionEmpresa.list(params), model:[configuracionEmpresaInstanceCount: ConfiguracionEmpresa.count()]
     }
 
-    def show(ConfiguracionEmpresa configuracionEmpresaInstance) {        
+    def show(ConfiguracionEmpresa configuracionEmpresaInstance) {
+        println "mensaje:"+ params
         respond configuracionEmpresaInstance
     }
 
@@ -24,22 +25,22 @@ class ConfiguracionEmpresaController {
     }
 
     @Transactional
-    def save(ConfiguracionEmpresa configuracionEmpresaInstance) {  
+    def save(ConfiguracionEmpresa configuracionEmpresaInstance) {
         if (configuracionEmpresaInstance == null) {
             notFound()
             return
         }
-        
+
         if (configuracionEmpresaInstance.hasErrors()) {
             respond configuracionEmpresaInstance.errors, view:'create'
             return
         }
-                
+
         configuracionEmpresaInstance.save flush:true
 
         request.withFormat {
             form multipartForm {
-                flash.message = "Datos guardados correctamente."
+                flash.message = "mensaje"
                 redirect configuracionEmpresaInstance
             }
             '*' { respond configuracionEmpresaInstance, [status: CREATED] }
@@ -51,7 +52,7 @@ class ConfiguracionEmpresaController {
     }
 
     @Transactional
-    def update(ConfiguracionEmpresa configuracionEmpresaInstance) {                       
+    def update(ConfiguracionEmpresa configuracionEmpresaInstance) {
         if (configuracionEmpresaInstance == null) {
             notFound()
             return
@@ -103,53 +104,4 @@ class ConfiguracionEmpresaController {
             '*'{ render status: NOT_FOUND }
         }
     }
-    
-    def getExtensionList () {
-        def extensiones = []
-        extensiones << "jpeg"
-        extensiones << "jpg"
-        extensiones << "png"
-        extensiones << "bmp"
-        extensiones
-    }
-    
-    def showImage () {        
-        def empresaInstance = ConfiguracionEmpresa.get( params.id )
-        response.outputStream << empresaInstance.logo
-        response.outputStream.flush()
-    }
-    
-    @Transactional
-    def uploadLogo () {
-        flash.message = null        
-        def configuracionEmpresaInstance = ConfiguracionEmpresa.get(params.id as long)        
-        def f = request.getFile('logo')
-        if (f.getSize() == 0) {
-            flash.warn = "Debe indicar la ruta de la imagen."
-        } else if (f.getSize() >= 5242880) {
-            flash.warn = "El archivo debe pesar menos de 5 Mb."
-        } else {            
-            def filename = f.getOriginalFilename() 
-            def extension = filename.substring(filename.lastIndexOf(".") + 1, filename.size()).toLowerCase()
-            def extensionList = getExtensionList()
-            if (extensionList.contains(extension)) {                
-                configuracionEmpresaInstance.nombreDeLogo = filename
-                configuracionEmpresaInstance.logo = f.getBytes()
-                if (configuracionEmpresaInstance.save(flash:true)) {
-                    flash.message = "La imágen de tu logo se guardo correctamente."
-                } else {
-                    flash.error = "Error en base de datos."
-                }
-            } else {
-                flash.warn = "El archivo debe tener alguna de las siguientes extensiones: jpeg, jpg, png, bmp."
-            }            
-        }
-        request.withFormat {
-            form multipartForm {                
-                redirect configuracionEmpresaInstance
-            }
-            '*'{ respond configuracionEmpresaInstance, [status: OK] }
-        }
-    }
-    
 }

@@ -34,7 +34,7 @@
         <!-- Important plugins put in all pages -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>     
-        <script src="${resource(dir:'assets/js/bootstrap',file:'bootstrap.js')}"></script>  
+        <script src="${resource(dir:'assets/js/bootstrap',file:'bootstrap.js')}"></script>
         <script src="${resource(dir:'assets/js',file:'conditionizr.min.js')}"></script>  
         <script src="${resource(dir:'assets/js/plugins/core/nicescroll',file:'jquery.nicescroll.min.js')}"></script>
         <script src="${resource(dir:'assets/js/plugins/core/jrespond',file:'jRespond.min.js')}"></script>
@@ -59,10 +59,7 @@
 <body>    
     <header id="header">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <a href="#" class="navbar-brand">
-                <b>Cogaem</b>
-            </a><!--/.brand-->
-                <!--a class="navbar-brand" href="dashboard.html"><img src="/assets/images/logo.png" alt="Genyx admin" class="img-responsive"></a-->
+            <a class="navbar-brand" href="dashboard.gsp"><img src="assets/images/logo.png" alt="Genyx admin" class="img-responsive"></a>
             <button type="button" class="navbar-toggle btn-danger" data-toggle="collapse" data-target="#navbar-to-collapse">
                 <span class="sr-only">Toggle right menu</span>
                 <i class="icon16 i-arrow-8"></i>

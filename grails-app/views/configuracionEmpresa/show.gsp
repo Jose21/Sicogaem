@@ -5,7 +5,7 @@
     <head>
         <meta name="layout" content="main">
         <g:set var="entityName" value="${message(code: 'configuracionEmpresa.label', default: 'ConfiguracionEmpresa')}" />
-        <title>Datos</title>
+        <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
     <body>             
         <div class="container-fluid">
@@ -77,37 +77,40 @@
                             </div><!-- End .panel-body -->
                         </div><!-- End .widget -->
                     </div><!-- End .col-lg-6  -->
+                    <g:if test="${configuracionEmpresaInstance?.nombreDeEmpresa}">
+                        <li class="fieldcontain">
+                            <span id="nombreDeEmpresa-label" class="property-label"><g:message code="configuracionEmpresa.nombreDeEmpresa.label" default="Nombre De Empresa" /></span>
 
+                            <span class="property-value" aria-labelledby="nombreDeEmpresa-label"><g:fieldValue bean="${configuracionEmpresaInstance}" field="nombreDeEmpresa"/></span>
 
-                    <div class="col-lg-4">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="icon"><i class="icon20 i-image-2"></i></div> 
-                                <h4>Logo de la Empresa</h4>
-                                <a href="#" class="minimize"></a>
-                            </div><!-- End .panel-heading -->
+                        </li>
+                    </g:if>
 
-                            <div class="panel-body ">
+                    <g:if test="${configuracionEmpresaInstance?.domicilio}">
+                        <li class="fieldcontain">
+                            <span id="domicilio-label" class="property-label"><g:message code="configuracionEmpresa.domicilio.label" default="Domicilio" /></span>
 
-                                <div class="chat-layout">
-                                    <ul>
-                                        <li class="clearfix leftside">
-                                            <g:render template="logo"/>
-                                        </li>
-                                    </ul>                                   
-                                </div>
-                            </div><!-- End .panel-body -->
-                        </div><!-- End .widget -->
-                    </div><!-- End .col-lg-6  -->
+                            <span class="property-value" aria-labelledby="domicilio-label"><g:fieldValue bean="${configuracionEmpresaInstance}" field="domicilio"/></span>
 
+                        </li>
+                    </g:if>
 
+                    <g:if test="${configuracionEmpresaInstance?.email}">
+                        <li class="fieldcontain">
+                            <span id="email-label" class="property-label"><g:message code="configuracionEmpresa.email.label" default="Email" /></span>
 
+                            <span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${configuracionEmpresaInstance}" field="email"/></span>
 
+                        </li>
+                    </g:if>
 
-
+                    </ol>
+                    <g:form url="[resource:configuracionEmpresaInstance, action:'delete']" method="DELETE">
+                        <fieldset class="buttons">
+                            <g:link class="edit" action="edit" resource="${configuracionEmpresaInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+                            <g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+                        </fieldset>
+                    </g:form>
                 </div>
-            </div>
-        </div>
-    </div>       
-</body>
-</html>
+                </body>
+                </html>

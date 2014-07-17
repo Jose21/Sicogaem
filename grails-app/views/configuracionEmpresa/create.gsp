@@ -15,9 +15,8 @@
                             <h4>Datos Generales</h4>
                             <a href="#" class="minimize"></a>
                         </div><!-- End .panel-heading -->
-                        <g:render template="/shared/alerts" />
                         <div class="panel-body">                            
-                            <div class="container-fluid">                                
+                            <div class="container-fluid">                               
                                 <g:if test="${flash.message}">
                                     <div class="message" role="status">${flash.message}</div>
                                 </g:if>
@@ -28,7 +27,7 @@
                                             </g:eachError>
                                     </ul>
                                 </g:hasErrors>
-                                <g:form url="[resource:configuracionEmpresaInstance, action:'save']" class="form-horizontal" role="form" enctype="multipart/form-data">
+                                <g:form url="[resource:configuracionEmpresaInstance, action:'save']" class="form-horizontal" role="form" >
                                     <fieldset class="form">
                                         <g:render template="form"/>
                                     </fieldset>                                    
