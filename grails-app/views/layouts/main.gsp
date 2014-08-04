@@ -26,7 +26,7 @@
 
         <!-- Custom stylesheets ( Put your own changes here ) -->
         <link href="${resource(dir:'assets/css',file:'custom.css')}" rel="stylesheet" /> 
-        <link href="${resource(dir:'assets/css/js/plugins/forms/switch',file:'bootstrapSwitch.css')}" rel="stylesheet" />  
+        <link href="${resource(dir:'assets/js/plugins/forms/switch',file:'bootstrapSwitch.css')}" rel="stylesheet" />  
 
         <!-- Force IE9 to render in normal mode -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -42,80 +42,81 @@
 
         <!-- Form plugins -->
         <script src="${resource(dir:'assets/js/plugins/forms/uniform',file:'jquery.uniform.min.js')}"></script>
-        <script src="${resource(dir:'assets/js/plugins/forms/switch',file:'bootstrapSwitch.js"')}"></script>
+        <script src="${resource(dir:'assets/js/plugins/forms/switch',file:'bootstrapSwitch.js')}"></script>
 
         <!-- Init plugins -->
         <script src="${resource(dir:'assets/js',file:'app.js')}"></script><!-- Core js functions -->
+        <!--script src="${resource(dir:'assets/js/pages',file:'dashboard.js')}"></script--><!-- Init plugins only for page -->
         <script src="${resource(dir:'assets/js/pages',file:'domready.js')}"></script><!-- Init plugins only for page -->
 
         <!-- UI plugins -->
         <script src="${resource(dir:'assets/js/plugins/ui/jgrowl',file:'jquery.jgrowl.js')}"></script>
 
 
-    <asset:stylesheet src="application.css"/>
-    <asset:javascript src="application.js"/>
-    <g:layoutHead/>
-</head>
-<body>    
-    <header id="header">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <a class="navbar-brand" href="dashboard.gsp"><img src="assets/images/logo.png" alt="Genyx admin" class="img-responsive"></a>
-            <button type="button" class="navbar-toggle btn-danger" data-toggle="collapse" data-target="#navbar-to-collapse">
-                <span class="sr-only">Toggle right menu</span>
-                <i class="icon16 i-arrow-8"></i>
-            </button>          
-            <div class="collapse navbar-collapse" id="navbar-to-collapse">                  
-                <ul class="nav navbar-nav pull-right">                                                                        
-                    <li class="divider-vertical"></li>
-                    <li class="dropdown user">
-                        <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
-
-                            <sec:ifLoggedIn>
-                                <img width="10%" height="10%" src="http://localhost:8080/Sicogaem/imagen/mostrar/${sec.loggedInUserInfo(field:"id")}">
-                                <%--<sec:loggedInUserInfo field="foto" />--%>
-                            </sec:ifLoggedIn>                            
-
-                            <sec:ifLoggedIn>
-                                <sec:username/>
-                            </sec:ifLoggedIn>
-
-                            <span class="more"><i class="icon16 i-arrow-down-2"></i></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li role="presentation"><g:link controller="user"><i class="icon16 i-cogs"></i> Configuraciones</g:link></li>
-                            <li role="presentation"><g:link controller="user" action="verUsuario" id="${sec.loggedInUserInfo(field:"id")}"><i class="icon16 i-user"></i> Perfil</g:link></li>
-                            <li role="presentation"><g:link controller="logout" action="index"><i class="icon16 i-exit"></i> Salir</g:link></li>
-                            </ul>
-                        </li>
+    <!--asset:stylesheet src="application.css"/-->
+    <!--asset:javascript src="application.js"/-->
+        <g:layoutHead/>
+    </head>
+    <body>    
+        <header id="header">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <a class="navbar-brand"><h1>Cogaem</h1></a>
+                <button type="button" class="navbar-toggle btn-danger" data-toggle="collapse" data-target="#navbar-to-collapse">
+                    <span class="sr-only">Toggle right menu</span>
+                    <i class="icon16 i-arrow-8"></i>
+                </button>          
+                <div class="collapse navbar-collapse" id="navbar-to-collapse">                  
+                    <ul class="nav navbar-nav pull-right">                                                                        
                         <li class="divider-vertical"></li>
-                    </ul>
-                </div><!--/.nav-collapse -->
-        </nav>
-    </header> <!-- End #header  -->
+                        <li class="dropdown user">
+                            <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
 
-    <div class="main">
-        <aside id="sidebar">
-            <g:render template="/shared/menu" />
-        </aside><!-- End #sidebar  -->
-        <section id="content">
-            <div class="wrapper">
-                <div class="crumb">
-                    <ul class="breadcrumb">
-                        <li><a href="#"><i class="icon16 i-home-4"></i>Home</a></li>
-                        <li><a href="#">Library</a></li>
-                        <li class="active">Data</li>
-                    </ul>
-                </div>
+                                <sec:ifLoggedIn>
+                                    <img width="10%" height="10%" src="http://localhost:8080/Sicogaem/imagen/mostrar/${sec.loggedInUserInfo(field:"id")}">
+                                    <%--<sec:loggedInUserInfo field="foto" />--%>
+                                </sec:ifLoggedIn>                            
 
-                <div class="container-fluid">                    
-                    <div class="row">
-                    <!-- Start page from here  -->                       
-                        <g:layoutBody/>
-                    <!--PAGE CONTENT ENDS-->
-                    </div><!-- End .row-fluid  -->
-                </div> <!-- End .container-fluid  -->
-            </div> <!-- End .wrapper  -->
-        </section>
-    </div><!-- End .main  -->
-</body>
+                                <sec:ifLoggedIn>
+                                    <sec:username/>
+                                </sec:ifLoggedIn>
+
+                                <span class="more"><i class="icon16 i-arrow-down-2"></i></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li role="presentation"><g:link controller="user"><i class="icon16 i-cogs"></i> Configuraciones</g:link></li>
+                                <li role="presentation"><g:link controller="user" action="verUsuario" id="${sec.loggedInUserInfo(field:"id")}"><i class="icon16 i-user"></i> Perfil</g:link></li>
+                                <li role="presentation"><g:link controller="logout" action="index"><i class="icon16 i-exit"></i> Salir</g:link></li>
+                                </ul>
+                            </li>
+                            <li class="divider-vertical"></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+            </nav>
+        </header> <!-- End #header  -->
+
+        <div class="main">
+            <aside id="sidebar">
+                <g:render template="/shared/menu" />
+            </aside><!-- End #sidebar  -->
+            <section id="content">
+                <div class="wrapper">
+                    <div class="crumb">
+                        <ul class="breadcrumb">
+                            <li><a href="#"><i class="icon16 i-home-4"></i>Home</a></li>
+                            <li><a href="#">Library</a></li>
+                            <li class="active">Data</li>
+                        </ul>
+                    </div>
+
+                    <div class="container-fluid">                    
+                        <div class="row">
+                        <!-- Start page from here  -->                       
+                            <g:layoutBody/>
+                        <!--PAGE CONTENT ENDS-->
+                        </div><!-- End .row-fluid  -->
+                    </div> <!-- End .container-fluid  -->
+                </div> <!-- End .wrapper  -->
+            </section>
+        </div><!-- End .main  -->
+    </body>
 </html>

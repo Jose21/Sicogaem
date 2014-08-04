@@ -62,6 +62,17 @@
                                                     </li>
                                                 </ul>
                                             </g:if>
+                                            <g:if test="${configuracionEmpresaInstance?.telefono}">
+                                                <h4 class="period"><span id="domicilio-label" class="property-label"><g:message code="configuracionEmpresa.telefono.label" default="Teléfono" /></span></h4>                                
+                                                <ul class="todo-list" id="today">
+                                                    <li class="task-item clearfix">                                            
+                                                        <span class="priority tip"><i class="icon12 i-circle-2"></i></span>                                            
+                                                        <span class="task">
+                                                            <span class="property-value" aria-labelledby="telefono-label"><g:fieldValue bean="${configuracionEmpresaInstance}" field="telefono"/></span>
+                                                        </span>                                            
+                                                    </li>
+                                                </ul>
+                                            </g:if>
                                         </div>
                                     </div>
                                     <div class="panel-heading">

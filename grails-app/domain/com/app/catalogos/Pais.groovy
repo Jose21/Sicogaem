@@ -5,4 +5,9 @@ class Pais implements Serializable{
     static constraints = {
         nombre blank:false
     }
+    
+    String toString() {
+        "${nombre}"
+    }
+    
 }

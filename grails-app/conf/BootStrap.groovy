@@ -43,10 +43,12 @@ class BootStrap {
                 new UsuarioRol (usuario : Usuario.findByUsername("contador"), rol : Rol.findByAuthority("ROLE_CONTADOR")).save()
                 
                 
-                new Estado (nombre:"Estado de México").save()
-                new Pais (nombre:"México").save()
+                /*new Estado (nombre:"Estado de México").save()
+                new Pais (nombre:"México").save()*/
                 
-                new ConfiguracionEmpresa(nombreDeEmpresa:"NUUPTECH S.A. de C.V.",domicilio:"Calle Los Cerezos 943",email:"nuuptech1@gmail.com").save()
+                new ConfiguracionEmpresa(nombreDeEmpresa:"NUUPTECH S.A. de C.V.",domicilio:"Calle Cerezos 943",
+                                         email:"nuuptech1@gmail.com", estado:null, telefono:null
+                                        ).save()
                 
                 println("we made it! ")
                 /**break

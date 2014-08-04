@@ -7,6 +7,8 @@ class ConfiguracionEmpresa {
     byte[] logo
     String domicilio
     String email
+    String telefono
+    Estado estado
     
     static constraints = {
         nombreDeEmpresa     nullable:false, unique:true
@@ -14,11 +16,12 @@ class ConfiguracionEmpresa {
         logo                nullable:true, maxSize:10000000
         domicilio           nullable:false
         email               email:true
+        estado              nullable:true
+        telefono            nullable:true
     }
     
     static mapping = {
-        id generator: 'hilo',
-        params: [table: 'hi_value', column: 'next_value', max_lo: 100]
+        id generator: 'hilo'
     }
     
 }

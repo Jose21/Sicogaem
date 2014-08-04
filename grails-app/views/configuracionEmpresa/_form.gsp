@@ -31,3 +31,24 @@
     </div>
 </div>
 
+<div class="form-group fieldcontain ${hasErrors(bean: configuracionEmpresaInstance, field: 'telefono', 'error')} required">
+    <label class="col-lg-2 control-label" for="telefono">
+        <g:message code="configuracionEmpresa.telefono.label" default="Telefono" />
+        <span class="required-indicator">*</span>
+    </label>
+    <div class="col-lg-6">
+        <g:field type="telefono" name="telefono" required="" value="${configuracionEmpresaInstance?.telefono}"/>
+    </div>
+</div>
+
+<div class="form-group fieldcontain ${hasErrors(bean: configuracionEmpresaInstance, field: 'estado', 'error')} required">
+    <label for="estado" class="col-lg-2 control-label">
+        <g:message code="configuracionEmpresa.estado.label" default="Estado" />
+        <span class="required-indicator">*</span>
+    </label>
+    <div class="col-lg-4">
+        <g:select id="estado" name="estado.id" from="${com.app.catalogos.Estado.list()}" optionKey="id" required="" value="${configuracionEmpresaInstance?.estado?.id}" class="many-to-one" noSelection="['':'-Elige-']"/>
+    </div>
+</div>
+
+

@@ -9,8 +9,7 @@
         <g:uploadForm action="uploadLogo">
             <g:hiddenField name="id" value="${configuracionEmpresaInstance?.id}" />
             <input type="file" name="logo" class="form-control" />
-            <button class="btn btn-link gap-right10 tip pad5" title="Guardar image"><i class="icon16 i-upload gap-left0 gap-right0"></i></button>
-            <!--input type="submit" /-->
+            <button class="btn btn-link gap-right10 tip pad5" title="Guardar imagen"><i class="icon16 i-upload gap-left0 gap-right0"></i></button>
             </g:uploadForm>
     </div>
 </div><!-- End .control-group  -->
