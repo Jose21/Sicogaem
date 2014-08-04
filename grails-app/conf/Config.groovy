@@ -91,6 +91,7 @@ grails.hibernate.osiv.readonly = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+        uploadFolder = "/var/uploads/empresa/tmpFiles/"
     }
     production {
         grails.logging.jul.usebridge = false
@@ -138,6 +139,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/dashboard/**':                  ['ROLE_ADMINISTRADOR','ROLE_CONTADOR'],
         '/registrationCode/**':           ['ROLE_ADMINISTRADOR'],
         '/securityInfo/**':               ['ROLE_ADMINISTRADOR'],
-        '/assets/**':                     ['ROLE_ADMINISTRADOR']
+        '/assets/**':                     ['ROLE_ADMINISTRADOR'],
+        '/movimiento/**':                 ['ROLE_ADMINISTRADOR','ROLE_CONTADOR']
 	
 ]

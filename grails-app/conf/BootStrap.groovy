@@ -3,13 +3,13 @@ import com.app.catalogos.*
 import com.app.login.Rol
 import com.app.login.Usuario
 import com.app.login.UsuarioRol
-//import grails.util.Environment 
+import grails.util.Environment 
 
 class BootStrap {
 
     def init = { servletContext ->
-        /**switch(Environment.current){
-            case Environment.DEVELOPMENT:**/
+        switch(Environment.current){
+            case Environment.DEVELOPMENT:
                 
                 new Usuario (
                     firstName : "Administrador",
@@ -50,9 +50,8 @@ class BootStrap {
                                          email:"nuuptech1@gmail.com", estado:null, telefono:null
                                         ).save()
                 
-                println("we made it! ")
-                /**break
-        }**/
+                break
+        }
     }
     def destroy = {
     }

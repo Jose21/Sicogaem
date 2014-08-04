@@ -2,12 +2,23 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: movimientoInstance, field: 'concepto', 'error')} required">
+<%--<div class="fieldcontain ${hasErrors(bean: movimientoInstance, field: 'concepto', 'error')} required">
 	<label for="concepto">
 		<g:message code="movimiento.concepto.label" default="Concepto" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="concepto" required="" value="${movimientoInstance?.concepto}"/>
+
+</div>--%>
+
+
+
+<div class="fieldcontain ${hasErrors(bean: movimientoInstance, field: 'lugarDeExpedicion', 'error')} required">
+	<label for="lugarDeExpedicion">
+		<g:message code="movimiento.lugarDeExpedicion.label" default="Lugar De Expedicion" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="lugarDeExpedicion" required="" value="${movimientoInstance?.lugarDeExpedicion}"/>
 
 </div>
 
@@ -47,21 +58,30 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: movimientoInstance, field: 'importe', 'error')} required">
-	<label for="importe">
-		<g:message code="movimiento.importe.label" default="Importe" />
+<div class="fieldcontain ${hasErrors(bean: movimientoInstance, field: 'formaDePago', 'error')} required">
+	<label for="formaDePago">
+		<g:message code="movimiento.formaDePago.label" default="Forma De Pago" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field name="importe" value="${fieldValue(bean: movimientoInstance, field: 'importe')}" required=""/>
+	<g:textField name="formaDePago" required="" value="${movimientoInstance?.formaDePago}"/>
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: movimientoInstance, field: 'iva', 'error')} required">
-	<label for="iva">
-		<g:message code="movimiento.iva.label" default="Iva" />
+<div class="fieldcontain ${hasErrors(bean: movimientoInstance, field: 'importeNeto', 'error')} required">
+	<label for="importeNeto">
+		<g:message code="movimiento.importeNeto.label" default="Importe Neto" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field name="iva" value="${fieldValue(bean: movimientoInstance, field: 'iva')}" required=""/>
+	<g:field name="importeNeto" value="${fieldValue(bean: movimientoInstance, field: 'importeNeto')}" required=""/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: movimientoInstance, field: 'metodoDePago', 'error')} required">
+	<label for="metodoDePago">
+		<g:message code="movimiento.metodoDePago.label" default="Metodo De Pago" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="metodoDePago" required="" value="${movimientoInstance?.metodoDePago}"/>
 
 </div>
 
@@ -119,3 +139,83 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: movimientoInstance, field: 'totalImpuestosTrasladados', 'error')} required">
+	<label for="totalImpuestosTrasladados">
+		<g:message code="movimiento.totalImpuestosTrasladados.label" default="Total Impuestos Trasladados" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field name="totalImpuestosTrasladados" value="${fieldValue(bean: movimientoInstance, field: 'totalImpuestosTrasladados')}" required=""/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: movimientoInstance, field: 'calleExpedicion', 'error')} required">
+	<label for="calleExpedicion">
+		<g:message code="movimiento.calleFiscal.label" default="Calle: " />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="calleExpedicion" required="" value="${moviemientoInstance?.calleExpedicion}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: movimientoInstance, field: 'numeroExteriorExpedicion', 'error')} required">
+	<label for="numeroExteriorExpedicion">
+		<g:message code="movimiento.numeroExteriorExpedicion.label" default="Numero Exterior Expedicion" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="numeroExteriorExpedicion" required="" value="${movimientoInstance?.numeroExteriorExpedicion}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: movimientoInstance, field: 'numeroInteriorExpedicion', 'error')} required">
+	<label for="numeroInteriorExpedicion">
+		<g:message code="movimiento.numeroInteriorExpedicion.label" default="Numero Interior Expedicion" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="numeroInteriorExpedicion" required="" value="${movimientoInstance?.numeroInteriorExpedicion}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: movimientoInstance, field: 'coloniaExpedicion', 'error')} required">
+	<label for="coloniaExpedicion">
+		<g:message code="movimiento.coloniaExpedicion.label" default="Colonia Expedicion" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="coloniaExpedicion" required="" value="${movimientoInstance?.coloniaExpedicion}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: movimientoInstance, field: 'delegacionOMunicipioExpedicion', 'error')} required">
+	<label for="delegacionOMunicipioExpedicion">
+		<g:message code="movimiento.delegacionOMunicipioExpedicion.label" default="Delegacion OM unicipio Expedicion" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="delegacionOMunicipioExpedicion" required="" value="${movimientoInstance?.delegacionOMunicipioExpedicion}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: movimientoInstance, field: 'estadoExpedicion', 'error')} required">
+	<label for="estadoExpedicion">
+		<g:message code="movimiento.estadoExpedicion.label" default="Estado Expedicion" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="estadoExpedicion" name="estadoExpedicion.id" from="${com.app.catalogos.Estado.list()}" optionKey="id" required="" value="${movimientoInstance?.estadoExpedicion?.id}" class="many-to-one"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: movimientoInstance, field: 'paisExpedicion', 'error')} required">
+	<label for="paisExpedicion">
+		<g:message code="movimiento.paisExpedicion.label" default="Pais Expedicion" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="paisExpedicion" name="paisExpedicion.id" from="${com.app.catalogos.Pais.list()}" optionKey="id" required="" value="${movimientoInstance?.paisExpedicion?.id}" class="many-to-one"/>
+        
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: movimientoInstance, field: 'codigoPostalExpedicion', 'error')} required">
+	<label for="codigoPostalExpedicion">
+		<g:message code="movimiento.codigoPostalExpedicion.label" default="Codigo Postal Expedicion" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="codigoPostalExpedicion" required="" value="${movimientoInstance?.codigoPostalExpedicion}"/>
+
+</div>

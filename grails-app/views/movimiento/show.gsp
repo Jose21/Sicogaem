@@ -68,20 +68,29 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${movimientoInstance?.importe}">
+				<g:if test="${movimientoInstance?.formaDePago}">
 				<li class="fieldcontain">
-					<span id="importe-label" class="property-label"><g:message code="movimiento.importe.label" default="Importe" /></span>
+					<span id="formaDePago-label" class="property-label"><g:message code="movimiento.formaDePago.label" default="Forma De Pago" /></span>
 					
-						<span class="property-value" aria-labelledby="importe-label"><g:fieldValue bean="${movimientoInstance}" field="importe"/></span>
+						<span class="property-value" aria-labelledby="formaDePago-label"><g:fieldValue bean="${movimientoInstance}" field="formaDePago"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${movimientoInstance?.iva}">
+				<g:if test="${movimientoInstance?.importeNeto}">
 				<li class="fieldcontain">
-					<span id="iva-label" class="property-label"><g:message code="movimiento.iva.label" default="Iva" /></span>
+					<span id="importeNeto-label" class="property-label"><g:message code="movimiento.importeNeto.label" default="Importe Neto" /></span>
 					
-						<span class="property-value" aria-labelledby="iva-label"><g:fieldValue bean="${movimientoInstance}" field="iva"/></span>
+						<span class="property-value" aria-labelledby="importeNeto-label"><g:fieldValue bean="${movimientoInstance}" field="importeNeto"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${movimientoInstance?.metodoDePago}">
+				<li class="fieldcontain">
+					<span id="metodoDePago-label" class="property-label"><g:message code="movimiento.metodoDePago.label" default="Metodo De Pago" /></span>
+					
+						<span class="property-value" aria-labelledby="metodoDePago-label"><g:fieldValue bean="${movimientoInstance}" field="metodoDePago"/></span>
 					
 				</li>
 				</g:if>
@@ -136,6 +145,15 @@
 					<span id="total-label" class="property-label"><g:message code="movimiento.total.label" default="Total" /></span>
 					
 						<span class="property-value" aria-labelledby="total-label"><g:fieldValue bean="${movimientoInstance}" field="total"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${movimientoInstance?.totalImpuestosTrasladados}">
+				<li class="fieldcontain">
+					<span id="totalImpuestosTrasladados-label" class="property-label"><g:message code="movimiento.totalImpuestosTrasladados.label" default="Total Impuestos Trasladados" /></span>
+					
+						<span class="property-value" aria-labelledby="totalImpuestosTrasladados-label"><g:fieldValue bean="${movimientoInstance}" field="totalImpuestosTrasladados"/></span>
 					
 				</li>
 				</g:if>

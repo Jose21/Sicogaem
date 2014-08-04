@@ -15,6 +15,9 @@
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
+                
+                
+                
 		<div id="list-movimiento" class="content scaffold-list" role="main">
 			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
@@ -34,7 +37,7 @@
 					
 						<g:sortableColumn property="folioFiscal" title="${message(code: 'movimiento.folioFiscal.label', default: 'Folio Fiscal')}" />
 					
-						<g:sortableColumn property="importe" title="${message(code: 'movimiento.importe.label', default: 'Importe')}" />
+						<g:sortableColumn property="formaDePago" title="${message(code: 'movimiento.formaDePago.label', default: 'Forma De Pago')}" />
 					
 					</tr>
 				</thead>
@@ -52,7 +55,7 @@
 					
 						<td>${fieldValue(bean: movimientoInstance, field: "folioFiscal")}</td>
 					
-						<td>${fieldValue(bean: movimientoInstance, field: "importe")}</td>
+						<td>${fieldValue(bean: movimientoInstance, field: "formaDePago")}</td>
 					
 					</tr>
 				</g:each>

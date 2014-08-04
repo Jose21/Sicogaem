@@ -47,6 +47,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: personaInstance, field: 'localidadFiscal', 'error')} required">
+	<label for="localidadFiscal">
+		<g:message code="persona.localidadFiscal.label" default="Localidad Fiscal" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="localidadFiscal" required="" value="${personaInstance?.localidadFiscal}"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: personaInstance, field: 'delegacionOMunicipioFiscal', 'error')} required">
 	<label for="delegacionOMunicipioFiscal">
 		<g:message code="persona.delegacionOMunicipioFiscal.label" default="Delegacion OM unicipio Fiscal" />
@@ -101,3 +110,11 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: personaInstance, field: 'regimenFiscal', 'error')} required">
+	<label for="regimenFiscal">
+		<g:message code="persona.regimenFiscal.label" default="Régimen Fiscal" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="regimenFiscal" required="" value="${personaInstance?.regimenFiscal}"/>
+
+</div>

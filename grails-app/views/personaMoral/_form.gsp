@@ -47,6 +47,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: personaMoralInstance, field: 'localidadFiscal', 'error')} required">
+	<label for="localidadFiscal">
+		<g:message code="personaMoral.localidadFiscal.label" default="Localidad Fiscal" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="localidadFiscal" required="" value="${personaMoral?.localidadFiscal}"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: personaMoralInstance, field: 'delegacionOMunicipioFiscal', 'error')} required">
 	<label for="delegacionOMunicipioFiscal">
 		<g:message code="personaMoral.delegacionOMunicipioFiscal.label" default="Delegacion OM unicipio Fiscal" />

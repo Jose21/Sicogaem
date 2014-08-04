@@ -18,10 +18,10 @@
         </ul>
         <ul class="nav nav-list">
             <li>
-                <a href="dashboard.html">
+                <g:link controller="movimiento" action="subirArchivoXML">
                     <span class="icon"><i class="icon20 i-coins"></i></span>
                     <span class="txt">Entrada</span>
-                </a>
+                </g:link>
             </li>
         </ul>
         <ul class="nav nav-list">

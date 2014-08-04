@@ -108,5 +108,7 @@
                         </div><!-- End .widget -->
                     </div><!-- End .col-lg-6  -->
                 </div>
-                </body>
-                </html>
+            </div>
+        </div>
+    </body>
+</html>
